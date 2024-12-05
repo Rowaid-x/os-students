@@ -5,8 +5,8 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class Client {
-    private static String ticket = null; // Stores the user's ticket for authentication
-    private static final String TIMESTAMP_FORMAT = "yyyy-MM-dd HH:mm:ss"; // Timestamp format
+    private static String ticket = null; 
+    private static final String TIMESTAMP_FORMAT = "yyyy-MM-dd HH:mm:ss"; // Timestamp
 
     public static void main(String[] args) {
         if (args.length < 2) {
@@ -24,7 +24,7 @@ public class Client {
             PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
             BufferedReader console = new BufferedReader(new InputStreamReader(System.in));
 
-            // Start a thread to handle server messages
+            // Start a thread 
             new Thread(() -> {
                 try {
                     String serverMessage;
@@ -36,7 +36,7 @@ public class Client {
                 }
             }).start();
 
-            // Main loop for sending commands to the server
+            // Main loop for commands
             while (true) {
                 System.out.print("> ");
                 String command = console.readLine();
